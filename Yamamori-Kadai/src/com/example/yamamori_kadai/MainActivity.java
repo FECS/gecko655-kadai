@@ -74,8 +74,8 @@ public class MainActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					Uri uri = Uri.parse(googleDotCom);
-					Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-					startActivity(intent);
+                    Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                    startActivity(intent);
 					
 				}
 				
@@ -85,7 +85,15 @@ public class MainActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(getActivity(), editText.getText(), Toast.LENGTH_LONG).show();
+					Toast.makeText(getActivity(), editText.getText(), Toast.LENGTH_SHORT).show();
+					Uri uri=Uri.parse(editText.getText().toString());
+					if(uri.isAbsolute()){
+                        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                        startActivity(intent);
+					}else{
+                        Toast.makeText(getActivity(), "URLスキームがありません。http://www.google.com/のように入力してください。", Toast.LENGTH_LONG).show();
+					}
+
 				}
 				
 			});
