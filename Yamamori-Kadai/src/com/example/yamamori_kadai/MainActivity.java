@@ -14,6 +14,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
 
 public class MainActivity extends Activity {
@@ -55,6 +58,7 @@ public class MainActivity extends Activity {
 	public static class PlaceholderFragment extends Fragment {
 
 		Button button;
+		EditText editText;
 		final String googleDotCom="http://www.google.com";
 		public PlaceholderFragment() {
 		}
@@ -76,6 +80,16 @@ public class MainActivity extends Activity {
 				}
 				
 			});
+			editText=(EditText)rootView.findViewById(R.id.editText);
+			rootView.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getActivity(), editText.getText(), Toast.LENGTH_LONG).show();
+				}
+				
+			});
+
 			return rootView;
 		}
 	}
