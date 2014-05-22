@@ -4,5 +4,6 @@
     <string name="app_name">Yamamori-Kadai</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button">Go to google.com</string>
 
 </resources>
