@@ -3,12 +3,15 @@ package com.example.yamamori_kadai;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.os.Build;
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
 	public static class PlaceholderFragment extends Fragment {
 
 		Button button;
+		final String googleDotCom="http://www.google.com";
 		public PlaceholderFragment() {
 		}
 
@@ -61,6 +65,17 @@ public class MainActivity extends Activity {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
 			button =(Button)rootView.findViewById(R.id.button);
+			button.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					Uri uri = Uri.parse(googleDotCom);
+					Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+					startActivity(intent);
+					
+				}
+				
+			});
 			return rootView;
 		}
 	}
