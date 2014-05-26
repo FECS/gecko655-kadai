@@ -17,7 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class PlaceholderFragment2 extends ListFragment {
+public class PlaceholderFragment2 extends Fragment {
 	final private String defaultAlphabets="abcdefghijklmnopqrstuvwxyz";
 
 	public PlaceholderFragment2() {
@@ -37,8 +37,8 @@ public class PlaceholderFragment2 extends ListFragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				Toast.makeText(view.getContext(), view.toString(),Toast.LENGTH_LONG).show();
-				
+				String clicked = (String)parent.getItemAtPosition(position);
+				Toast.makeText(parent.getContext(), clicked,Toast.LENGTH_LONG).show();
 			}
 			
 		});
