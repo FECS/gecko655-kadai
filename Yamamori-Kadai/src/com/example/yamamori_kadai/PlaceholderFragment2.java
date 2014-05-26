@@ -38,7 +38,7 @@ public class PlaceholderFragment2 extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				String clicked = (String)parent.getItemAtPosition(position);
-				Toast.makeText(parent.getContext(), clicked,Toast.LENGTH_LONG).show();
+				Toast.makeText(parent.getContext(), clicked,Toast.LENGTH_SHORT).show();
 			}
 			
 		});

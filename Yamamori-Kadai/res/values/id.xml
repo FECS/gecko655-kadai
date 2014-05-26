@@ -4,5 +4,8 @@
     <item type="id" name="editText"/>
     <item type="id" name="listView"/>
     <item type="id" name="scrollFragment"/>
+    <item type="id" name="main_layout"/>
+    <item type="id" name="image"/>
+    <item type="id" name="imageContainer"/>
     
 </resources>
