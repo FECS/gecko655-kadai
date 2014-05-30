@@ -12,27 +12,27 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class PlaceholderFragment2 extends ListFragment {
-	final private String defaultAlphabets="abcdefghijklmnopqrstuvwxyz";
+    final private String defaultAlphabets="abcdefghijklmnopqrstuvwxyz";
 
-	public PlaceholderFragment2() {
-	}
+    public PlaceholderFragment2() {
+    }
 
-	@SuppressLint("DefaultLocale")
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.scroll_fragment, container,
-				false);
-		ListView listView = (ListView) rootView.findViewById(R.id.listView);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
-		listView.setAdapter(adapter);
-		char[] alphabets = defaultAlphabets.toCharArray();
-		for(char alph: alphabets){
+    @SuppressLint("DefaultLocale")
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.scroll_fragment, container,
+                false);
+        ListView listView = (ListView) rootView.findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1);
+        listView.setAdapter(adapter);
+        char[] alphabets = defaultAlphabets.toCharArray();
+        for(char alph: alphabets){
             adapter.add(String.valueOf(alph));
-		}
-		for(char alph: alphabets){
+        }
+        for(char alph: alphabets){
             adapter.add(String.valueOf(alph).toUpperCase(Locale.JAPAN));
-		}
-		return rootView;
-	}
+        }
+        return rootView;
+    }
 }
