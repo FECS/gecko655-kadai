@@ -18,39 +18,39 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class PlaceholderFragment2 extends Fragment {
-	final private String defaultAlphabets="abcdefghijklmnopqrstuvwxyz";
+    final private String defaultAlphabets="abcdefghijklmnopqrstuvwxyz";
 
-	public PlaceholderFragment2() {
-	}
+    public PlaceholderFragment2() {
+    }
 
-	@SuppressLint("DefaultLocale")
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.scroll_fragment, container,
-				false);
-		ListView listView = (ListView) rootView.findViewById(R.id.listView);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1);
-		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(new OnItemClickListener(){
+    @SuppressLint("DefaultLocale")
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.scroll_fragment, container,
+                false);
+        ListView listView = (ListView) rootView.findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener(){
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				String clicked = (String)parent.getItemAtPosition(position);
-				Toast.makeText(parent.getContext(), clicked,Toast.LENGTH_LONG).show();
-			}
-			
-		});
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                    int position, long id) {
+                String clicked = (String)parent.getItemAtPosition(position);
+                Toast.makeText(parent.getContext(), clicked,Toast.LENGTH_LONG).show();
+            }
+            
+        });
 
-		char[] alphabets = defaultAlphabets.toCharArray();
-		for(char alph: alphabets){
+        char[] alphabets = defaultAlphabets.toCharArray();
+        for(char alph: alphabets){
             adapter.add(String.valueOf(alph));
-		}
-		for(char alph: alphabets){
+        }
+        for(char alph: alphabets){
             adapter.add(String.valueOf(alph).toUpperCase(Locale.JAPAN));
-		}
-			
-		return rootView;
-	}
+        }
+            
+        return rootView;
+    }
 }
